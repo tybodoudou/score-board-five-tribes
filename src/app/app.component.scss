@@ -1,0 +1,12 @@
+.main-body {
+    height: calc(100% - 64px); // 64 is the min height of the toolbar
+    background: rgb(2, 0, 36);
+    background: linear-gradient(218deg, rgba(2, 0, 36, 1) 0%, rgba(15, 74, 118, 1) 75%, rgba(64, 122, 142, 1) 100%);
+    display: flex;
+    .main-content {
+        padding: 10vh;
+        max-width: 90vw;
+        flex: 1;
+        margin: 0 auto;
+    }
+}

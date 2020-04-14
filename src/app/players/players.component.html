@@ -1,0 +1,16 @@
+<mat-card class="players">
+    <mat-card-title>
+        {{ title }}
+    </mat-card-title>
+    <mat-card-content>
+        <form #playersForm="ngForm" class="content" (ngSubmit)="validatePlayers(playersForm)">
+            <mat-form-field>
+                <mat-label>{{ chooseNumber }}</mat-label>
+                <mat-select name="playersNumber" ngModel required>
+                    <mat-option *ngFor="let player of players" [value]="player"> {{ player }} {{ playersLabel }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary" [disabled]="!(playersForm.valid && playersForm.form.touched)">{{ validate }}</button>
+        </form>
+    </mat-card-content>
+</mat-card>

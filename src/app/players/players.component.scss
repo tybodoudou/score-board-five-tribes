@@ -1,0 +1,9 @@
+.players {
+    width: 400px;
+    margin: 0 auto;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        padding: 5vh;
+    }
+}
