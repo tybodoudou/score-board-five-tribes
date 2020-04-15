@@ -12,11 +12,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayersComponent } from './players/players.component';
 import { FormsModule } from '@angular/forms';
+import { GameScoreComponent } from './game-score/game-score.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayersComponent
+    PlayersComponent,
+    GameScoreComponent
   ],
   imports: [
     BrowserModule,

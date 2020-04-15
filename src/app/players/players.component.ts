@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { GameService } from '../services/game.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-players',
@@ -15,15 +17,19 @@ export class PlayersComponent implements OnInit {
   playersLabel = 'players';
   validate = 'Validate';
 
-  constructor() { }
+  constructor(
+    private gameService: GameService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
 
   validatePlayers(playersForm: NgForm): void {
-    console.log(playersForm);
-    console.log(playersForm.value.playersNumber);
-    // TODO create a service to redirect with the right number of player on the other form
+    this.playerNumber = playersForm.value.playersNumber;
+    this.gameService.setPlayerNumber(this.playerNumber);
+
+    this.router.navigate(['game', this.playerNumber]);
   }
 
 }
