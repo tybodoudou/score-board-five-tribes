@@ -4,41 +4,25 @@
     </mat-card-title>
     <mat-card-content>
         <form #scoreBoard="ngForm" (ngSubmit)="onSubmit(scoreBoard)" novalidate>
-            <div *ngFor="let player of playersListItem; let i = index">
-                <mat-label>{{playersListItem[i].name}}</mat-label>
-                <input type="text" matInput [(ngModel)]="playersListItem[i].name" id="playerName-{{i}}" name="playerName-{{i}}">
-
-                <mat-label>Coin</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].coin" id="coin-{{i}}" name="coin-{{i}}">
-
-                <mat-label>Vizier</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].vizier" id="vizier-{{i}}" name="vizier-{{i}}">
-
-                <mat-label>Craftman</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].craftman" id="craftman-{{i}}" name="craftman-{{i}}">
-
-                <mat-label>Sage</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].sage" id="sage-{{i}}" name="sage-{{i}}">
-
-                <mat-label>Djinn</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].djinn" id="djinn-{{i}}" name="djinn-{{i}}">
-
-                <mat-label>Palm tree</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].palmTree" id="palmTree-{{i}}" name="palmTree-{{i}}">
-
-                <mat-label>Palace</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].palace" id="palace-{{i}}" name="palace-{{i}}">
-
-                <mat-label>Camel</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].camel" id="camel-{{i}}" name="camel-{{i}}">
-
-                <mat-label>Object</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].object" id="object-{{i}}" name="object-{{i}}">
-
-                <mat-label>Merchandise</mat-label>
-                <input type="number" matInput [(ngModel)]="playersListItem[i].merchandise" id="merchandise-{{i}}" name="merchandise-{{i}}">
+            <div class="wrapper">
+                <div *ngFor="let row of gameArrayFormatted; let rowId = index" class="formRow">
+                    <div class="formColumn">
+                        <div class="formCell">
+                            <mat-label>{{gameArrayFormatted[rowId][1]}}</mat-label>
+                        </div>
+                    </div>
+                    <div *ngFor="let column of row[2]; let columnId = index" class="formColumn">
+                        <div class="formCell">
+                            <input
+                            type="{{row[0] === 'name'? 'text' : 'number'}}"
+                            matInput
+                            [ngModel]="gameArrayFormatted[rowId][2][columnId]"
+                            id="{{gameArrayFormatted[rowId][0]}}-{{columnId}}"
+                            name="{{gameArrayFormatted[rowId][0]}}-{{columnId}}">
+                        </div>
+                    </div>
+                </div>
             </div>
-
             <button mat-raised-button color="primary" type="submit">Get scores</button>
         </form>
     </mat-card-content>

@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GameService } from '../services/game.service';
 import { Subscription } from 'rxjs';
-import { PlayerInterface } from '../modeles/player.interface';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -12,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class GameScoreComponent implements OnInit, OnDestroy {
   routeSubscription$ = new Subscription();
-  playersListItem = [];
+  gameArrayFormatted = [];
 
   scoreBoardTitle = 'Enter all the scores for each items';
 
@@ -25,21 +24,15 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     this.routeSubscription$ = this.activatedRoute.params.subscribe(
       (param) => {
         this.gameService.setPlayerNumber(+param.id);
-        this.playersListItem = this.gameService.initPlayers();
-        console.log(this.playersListItem);
-        this._generateForm();
+        this.gameService.initPlayers();
+        this.gameArrayFormatted = this.gameService.formatGameArray();
       }
     );
   }
 
-  private _generateForm(): void {
-
-  }
-
   onSubmit(form: NgForm) {
     console.log(form.value);
-    console.log(this.playersListItem);
-
+    console.log(this.gameArrayFormatted);
   }
 
   ngOnDestroy(): void {

@@ -1,5 +1,4 @@
 export interface PlayerInterface {
-  id: number;
   name: string;
   coin: number;
   vizier: number; // yellow meeple
@@ -11,4 +10,5 @@ export interface PlayerInterface {
   camel: number;
   object?: number;
   merchandise: number;
+  score: number;
 }
