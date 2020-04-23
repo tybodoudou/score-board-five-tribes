@@ -24,7 +24,7 @@ export class GameService {
     score: { isActivated: true, name: 'Total' }
   };
 
-  gameArrayFormatted = [];
+  gameFormatted = {};
 
   constructor() { }
 
@@ -54,7 +54,7 @@ export class GameService {
     return this.playersListItem;
   }
 
-  formatGameArray() {
+  formatGameObject() {
     for (const keyName in this.listCategories) {
       if (this.listCategories.hasOwnProperty(keyName)) {
         const value = this.listCategories[keyName];
@@ -63,11 +63,15 @@ export class GameService {
            for (let i = 0; i < this.playersNumber; i++) {
              categoryRow.push(this.playersListItem[i][keyName]);
            }
-           this.gameArrayFormatted.push([keyName, value.name, categoryRow]);
+           this.gameFormatted[keyName] = {
+               label: value.name,
+               playersRow: categoryRow
+             };
          }
       }
    }
-    console.log(this.gameArrayFormatted);
-    return this.gameArrayFormatted;
+    console.log(this.gameFormatted);
+    console.log(Object.keys(this.gameFormatted));
+    return this.gameFormatted;
   }
 }

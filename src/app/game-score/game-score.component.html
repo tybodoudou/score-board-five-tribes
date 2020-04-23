@@ -5,20 +5,25 @@
     <mat-card-content>
         <form #scoreBoard="ngForm" (ngSubmit)="onSubmit(scoreBoard)" novalidate>
             <div class="wrapper">
-                <div *ngFor="let row of gameArrayFormatted; let rowId = index" class="formRow">
+                <div *ngFor="let row of gameKeys; let rowId = index" class="formRow">
                     <div class="formColumn">
                         <div class="formCell">
-                            <mat-label>{{gameArrayFormatted[rowId][1]}}</mat-label>
+                            <mat-label>{{ gameObjectFormatted[row].label }}</mat-label>
                         </div>
                     </div>
-                    <div *ngFor="let column of row[2]; let columnId = index" class="formColumn">
+                    <div *ngFor="let column of gameObjectFormatted[row].playersRow let columnId = index" class="formColumn">
                         <div class="formCell">
+                          <ng-container *ngIf="row !== 'score'; else score">
                             <input
-                            type="{{row[0] === 'name'? 'text' : 'number'}}"
+                            type="{{row === 'name'? 'text' : 'number'}}"
                             matInput
-                            [ngModel]="gameArrayFormatted[rowId][2][columnId]"
-                            id="{{gameArrayFormatted[rowId][0]}}-{{columnId}}"
-                            name="{{gameArrayFormatted[rowId][0]}}-{{columnId}}">
+                            [(ngModel)]="gameService.playersListItem[columnId][row]"
+                            id="{{ row }}-{{ columnId }}"
+                            name="{{ row }}-{{ columnId }}">
+                          </ng-container>
+                          <ng-template #score>
+                            {{ gameObjectFormatted[row].playersRow[columnId] }}
+                          </ng-template>
                         </div>
                     </div>
                 </div>

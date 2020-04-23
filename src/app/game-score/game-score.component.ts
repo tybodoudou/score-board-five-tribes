@@ -11,13 +11,14 @@ import { NgForm } from '@angular/forms';
 })
 export class GameScoreComponent implements OnInit, OnDestroy {
   routeSubscription$ = new Subscription();
-  gameArrayFormatted = [];
+  gameObjectFormatted = {};
+  gameKeys = [];
 
   scoreBoardTitle = 'Enter all the scores for each items';
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private gameService: GameService
+    public gameService: GameService
     ) { }
 
   ngOnInit(): void {
@@ -25,14 +26,17 @@ export class GameScoreComponent implements OnInit, OnDestroy {
       (param) => {
         this.gameService.setPlayerNumber(+param.id);
         this.gameService.initPlayers();
-        this.gameArrayFormatted = this.gameService.formatGameArray();
+        this.gameObjectFormatted = this.gameService.formatGameObject();
+        // to get the key and keep the order ( |keyvalue doesn't work like that)
+        this.gameKeys = Object.keys(this.gameObjectFormatted);
       }
     );
   }
 
   onSubmit(form: NgForm) {
     console.log(form.value);
-    console.log(this.gameArrayFormatted);
+    console.log(this.gameObjectFormatted);
+    console.log(this.gameService.playersListItem);
   }
 
   ngOnDestroy(): void {
