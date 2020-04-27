@@ -15,6 +15,7 @@ export class PlayersComponent implements OnInit {
   chooseNumber = 'How many players?';
   playersLabel = 'players';
   validate = 'Validate';
+  extensionLabel = 'Play with extension "The artisans of Naqala"';
 
   constructor(
     private gameService: GameService,

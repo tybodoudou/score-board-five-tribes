@@ -10,7 +10,7 @@
                     <mat-option *ngFor="let player of players" [value]="player"> {{ player }} {{ playersLabel }}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-slide-toggle color="primary" name="extension" ngModel>Play with extension "The artisans of Naqala"</mat-slide-toggle>
+            <mat-slide-toggle color="primary" name="extension" ngModel>{{ extensionLabel }}</mat-slide-toggle>
             <button type="submit" mat-raised-button color="primary" [disabled]="!(playersForm.valid && playersForm.form.touched)">{{ validate }}</button>
         </form>
     </mat-card-content>
