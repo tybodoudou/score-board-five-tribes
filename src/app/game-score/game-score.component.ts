@@ -34,9 +34,12 @@ export class GameScoreComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
-    console.log(this.gameObjectFormatted);
-    console.log(this.gameService.playersListItem);
+    if (form.valid) {
+      this.gameService.getScore(this.gameService.playersListItem);
+    }
+    // console.log(form.value);
+    // console.log(this.gameObjectFormatted);
+     console.log(this.gameService.playersListItem);
   }
 
   ngOnDestroy(): void {
