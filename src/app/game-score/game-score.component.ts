@@ -25,6 +25,7 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     this.routeSubscription$ = this.activatedRoute.params.subscribe(
       (param) => {
         this.gameService.setPlayerNumber(+param.id);
+        this.gameService.setExtension(param.extension);
         this.gameService.initPlayers();
         this.gameObjectFormatted = this.gameService.formatGameObject();
         // to get the key and keep the order ( |keyvalue doesn't work like that)

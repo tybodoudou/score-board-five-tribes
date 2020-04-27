@@ -5,5 +5,9 @@
         display: flex;
         justify-content: space-between;
         padding: 5vh;
+        flex-direction: column;
+        .mat-slide-toggle {
+          margin: 5vh 0;
+        }
     }
 }

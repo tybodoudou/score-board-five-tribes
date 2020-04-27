@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayersComponent } from './players/players.component';
 import { FormsModule } from '@angular/forms';
 import { GameScoreComponent } from './game-score/game-score.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GameScoreComponent } from './game-score/game-score.component';
     MatSelectModule,
     MatIconModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

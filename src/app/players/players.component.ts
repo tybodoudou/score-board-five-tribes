@@ -10,10 +10,9 @@ import { Router } from '@angular/router';
 })
 export class PlayersComponent implements OnInit {
   players: Array<number> = [2, 3, 4];
-  playerNumber: number = null;
 
-  title = 'How many players?';
-  chooseNumber = 'Choose a number';
+  title = 'New game';
+  chooseNumber = 'How many players?';
   playersLabel = 'players';
   validate = 'Validate';
 
@@ -26,10 +25,9 @@ export class PlayersComponent implements OnInit {
   }
 
   validatePlayers(playersForm: NgForm): void {
-    this.playerNumber = playersForm.value.playersNumber;
-    this.gameService.setPlayerNumber(this.playerNumber);
-
-    this.router.navigate(['game', this.playerNumber]);
+    if (playersForm.valid) {
+      this.router.navigate(['game', playersForm.value.playersNumber, playersForm.value.extension]);
+    }
   }
 
 }

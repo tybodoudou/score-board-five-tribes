@@ -35,6 +35,13 @@ export class GameService {
     this.playersNumber =  players;
   }
 
+  setExtension(extension: boolean) {
+    if (extension) {
+      this.listCategories.craftman.isActivated = true;
+      this.listCategories.object.isActivated = true;
+    }
+  }
+
   initPlayers(): PlayerInterface[] {
     for (let i = 1; i <= this.playersNumber; i++) {
       this.playersListItem.push(
