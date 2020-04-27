@@ -1,6 +1,12 @@
 <mat-toolbar>
-    <mat-toolbar-row>
+    <mat-toolbar-row class="toolbar">
         <span>{{ title }}</span>
+        <span class="language-module">
+          <span class="flag">🇫🇷</span>
+          <mat-slide-toggle color="primary" name="language" ngModel></mat-slide-toggle>
+          <span class="flag">🇬🇧</span>
+        </span>
+
     </mat-toolbar-row>
 </mat-toolbar>
 <div class="main-body">

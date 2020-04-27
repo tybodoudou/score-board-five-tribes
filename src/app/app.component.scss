@@ -1,3 +1,12 @@
+.mat-toolbar-row, .mat-toolbar-single-row {
+  justify-content: space-between;
+  .language-module {
+    .flag {
+      padding: 0 14px;
+    }
+  }
+}
+
 .main-body {
     height: calc(100% - 64px); // 64 is the min height of the toolbar
     background: rgb(2, 0, 36);

@@ -31,7 +31,10 @@
                     </div>
                 </div>
             </div>
-            <button mat-raised-button color="primary" type="submit">Get scores</button>
+            <button mat-raised-button color="primary" type="submit"> {{ getScoreLabel }}</button>
+            <button mat-raised-button color="warn" type="button"
+              (click)="gameService.initPlayers();gameService.formatGameObject()"> {{ resetGameLabel }}</button>
+            <button mat-raised-button color="primary" type="button" [routerLink]="['players']"> {{ newGameLabel }}</button>
         </form>
     </mat-card-content>
 </mat-card>
