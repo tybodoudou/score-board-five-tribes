@@ -16,9 +16,9 @@
                           <ng-container *ngIf="row !== 'score'; else score">
                             <input
                             type="{{row === 'name'? 'text' : 'number'}}"
+                            onfocus="this.value=''"
                             min="{{ row === 'name'? null : 0}}"
                             matInput
-                            placeholder="{{gameService.playersListItem[columnId][row]}}"
                             [(ngModel)]="gameService.playersListItem[columnId][row]"
                             id="{{ row }}-{{ columnId }}"
                             name="{{ row }}-{{ columnId }}"
