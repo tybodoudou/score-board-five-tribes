@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { PlayerInterface } from '../modeles/player.interface';
-import { NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +38,9 @@ export class GameService {
     if (extension) {
       this.listCategories.craftman.isActivated = true;
       this.listCategories.object.isActivated = true;
+    } else {
+      this.listCategories.craftman.isActivated = false;
+      this.listCategories.object.isActivated = false;
     }
   }
 
@@ -65,6 +67,7 @@ export class GameService {
   }
 
   formatGameObject() {
+    this.gameFormatted = [];
     for (const keyName in this.listCategories) {
       if (this.listCategories.hasOwnProperty(keyName)) {
         const value = this.listCategories[keyName];
@@ -88,7 +91,8 @@ export class GameService {
       this._calculateScore(players[i], i);
     }
     // TODO remove the score button and put a new one for another game
-    // TODO reset alreadyCalculate variables
+    this.alreadyCalculateVizier = false;
+    this.alreadyCalculateCraftman = false;
   }
 
   private _calculateScore(player: PlayerInterface, i: number) {

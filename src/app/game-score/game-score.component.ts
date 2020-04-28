@@ -20,16 +20,20 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     ) { }
 
   ngOnInit(): void {
+    this.initGame();
+  }
+
+  initGame() {
     this.routeSubscription$ = this.activatedRoute.params.subscribe(
       (param) => {
         this.gameService.setPlayerNumber(+param.id);
-        this.gameService.setExtension(param.extension);
-        this.gameService.initPlayers();
-        this.gameObjectFormatted = this.gameService.formatGameObject();
-        // to get the key and keep the order ( |keyvalue doesn't work like that)
-        this.gameKeys = Object.keys(this.gameObjectFormatted);
+        this.gameService.setExtension(!!param.extension);
       }
     );
+    this.gameService.initPlayers();
+    this.gameObjectFormatted = this.gameService.formatGameObject();
+    // to get the key and keep the order ( |keyvalue doesn't work like that)
+    this.gameKeys = Object.keys(this.gameObjectFormatted);
   }
 
   onSubmit(form: NgForm) {
