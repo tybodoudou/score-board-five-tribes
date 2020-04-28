@@ -36,6 +36,12 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     this.gameKeys = Object.keys(this.gameObjectFormatted);
   }
 
+  clearIfDefault(columnId: number, row: string) {
+     if (this.gameObjectFormatted[row].playersRow[columnId] === this.gameService.playersListItem[columnId][row]) {
+      this.gameService.playersListItem[columnId][row] = '';
+    }
+  }
+
   onSubmit(form: NgForm) {
     if (form.valid) {
       this.gameService.getScore(this.gameService.playersListItem);

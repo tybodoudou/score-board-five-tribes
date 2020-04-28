@@ -111,7 +111,6 @@ export class GameService {
         case 'vizier':
           this._calculateVizier();
           break;
-
         // *2
         case 'sage':
           this.playersListItem[i].score += +player[prop] * 2;
@@ -124,7 +123,6 @@ export class GameService {
         case 'palace':
           this.playersListItem[i].score += +player[prop] * 5;
           break;
-
         // *2 or if or *3 if the number of craftman are stricly superior to others
         case 'craftman':
           this._calculateCraftman();
