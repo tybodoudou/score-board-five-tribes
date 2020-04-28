@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Five Tribes score board';
+  switch = false;
+
+  constructor(
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('fr');
+  }
+
+  changeLanguage() {
+    this.switch = !this.switch;
+    this.switch ? this.useLanguage('en') : this.useLanguage('fr');
+  }
+
+  useLanguage(language: string) {
+    this.translate.use(language);
+  }
 }

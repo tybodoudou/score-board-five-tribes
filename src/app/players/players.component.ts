@@ -11,12 +11,6 @@ import { Router } from '@angular/router';
 export class PlayersComponent implements OnInit {
   players: Array<number> = [2, 3, 4];
 
-  title = 'New game';
-  chooseNumber = 'How many players?';
-  playersLabel = 'players';
-  validate = 'Validate';
-  extensionLabel = 'Play with extension "The artisans of Naqala"';
-
   constructor(
     private gameService: GameService,
     private router: Router

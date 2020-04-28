@@ -1,9 +1,9 @@
 <mat-toolbar>
     <mat-toolbar-row class="toolbar">
-        <span>{{ title }}</span>
+        <span>{{ 'app.title' | translate }}</span>
         <span class="language-module">
           <span class="flag">🇫🇷</span>
-          <mat-slide-toggle color="primary" name="language" ngModel></mat-slide-toggle>
+          <mat-slide-toggle color="primary" name="language" (click)="changeLanguage()"></mat-slide-toggle>
           <span class="flag">🇬🇧</span>
         </span>
 

@@ -13,18 +13,18 @@ export class GameService {
   alreadyCalculateCraftman = false;
 
   listCategories: any = {
-    name: { isActivated: true, name: 'Name' },
-    coin: { isActivated: true, name: 'Coin' },
-    vizier: { isActivated: true, name: 'Vizier' },
-    craftman: { isActivated: false, name: 'Craftman' },
-    sage: { isActivated: true, name: 'Sage' },
-    djinn: { isActivated: true, name: 'Djinn' },
-    palmTree: { isActivated: true, name: 'Palm tree' },
-    palace: { isActivated: true, name: 'Palace' },
-    camel: { isActivated: true, name: 'Camel' },
-    object: { isActivated: false, name: 'Object' },
-    merchandise: { isActivated: true, name: 'Merchandise' },
-    score: { isActivated: true, name: 'Total' }
+    name: { isActivated: true },
+    coin: { isActivated: true },
+    vizier: { isActivated: true },
+    craftman: { isActivated: false },
+    sage: { isActivated: true },
+    djinn: { isActivated: true },
+    palmTree: { isActivated: true },
+    palace: { isActivated: true },
+    camel: { isActivated: true },
+    object: { isActivated: false },
+    merchandise: { isActivated: true },
+    score: { isActivated: true }
   };
 
   gameFormatted = {};
@@ -74,7 +74,7 @@ export class GameService {
              categoryRow.push(this.playersListItem[i][keyName]);
            }
            this.gameFormatted[keyName] = {
-               label: value.name,
+               //label: value.name,
                playersRow: categoryRow
              };
          }

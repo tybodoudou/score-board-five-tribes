@@ -13,11 +13,6 @@ export class GameScoreComponent implements OnInit, OnDestroy {
   routeSubscription$ = new Subscription();
   gameObjectFormatted = {};
   gameKeys = [];
-  getScoreLabel = 'Get score';
-  resetGameLabel = 'Reset game';
-  newGameLabel = 'New game';
-
-  scoreBoardTitle = 'Enter all the scores for each items';
 
   constructor(
     private activatedRoute: ActivatedRoute,

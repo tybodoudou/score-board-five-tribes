@@ -23,7 +23,9 @@
     "@angular/router": "~9.0.7",
     "@material/card": "^5.1.0",
     "@material/toolbar": "^2.3.0",
-    "rxjs": "~6.5.4",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
+    "rxjs": "^6.5.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
