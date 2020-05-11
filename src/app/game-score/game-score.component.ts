@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GameService } from '../services/game.service';
 import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-game-score',
@@ -11,12 +12,14 @@ import { NgForm } from '@angular/forms';
 })
 export class GameScoreComponent implements OnInit, OnDestroy {
   routeSubscription$ = new Subscription();
+  translation: Subscription;
   gameObjectFormatted = {};
   gameKeys = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    public gameService: GameService
+    public gameService: GameService,
+    private translate: TranslateService
     ) { }
 
   ngOnInit(): void {
@@ -30,10 +33,13 @@ export class GameScoreComponent implements OnInit, OnDestroy {
         this.gameService.setExtension(!!param.extension);
       }
     );
+    // wait translation asyncly
+    this.translation = this.translate.get('players.playerLabel').subscribe(() => {
     this.gameService.initPlayers();
     this.gameObjectFormatted = this.gameService.formatGameObject();
     // to get the key and keep the order ( |keyvalue doesn't work like that)
     this.gameKeys = Object.keys(this.gameObjectFormatted);
+    });
   }
 
   clearIfDefault(columnId: number, row: string) {
@@ -53,6 +59,7 @@ export class GameScoreComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.routeSubscription$.unsubscribe();
+    this.translation.unsubscribe();
   }
 
 }

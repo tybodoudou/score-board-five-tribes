@@ -5,6 +5,7 @@
   "players": {
     "title": "New game",
     "chooseNumber": "How many players?",
+    "playerLabel": "Player {{ number }}",
     "playersLabel": "players",
     "extensionLabel": "Play with extension \"The artisans of Naqala\"",
     "validateLabel": "Validate"
@@ -13,7 +14,8 @@
     "getScoreLabel": "Get score",
     "resetGameLabel": "Reset game",
     "newGameLabel": "New game",
-    "scoreBoardTitle": "Enter all the scores for each items"
+    "scoreBoardTitle": "Enter all the scores for each items",
+    "winnerLabel": "And the winner is:"
   },
   "items": {
     "name": "Name",

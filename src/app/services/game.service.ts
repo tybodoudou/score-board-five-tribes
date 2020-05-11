@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PlayerInterface } from '../modeles/player.interface';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,6 @@ import { PlayerInterface } from '../modeles/player.interface';
 export class GameService {
   playersNumber: number;
   playersListItem: PlayerInterface[] = [];
-  playerLabel = 'Player';
   alreadyCalculateVizier = false;
   alreadyCalculateCraftman = false;
 
@@ -28,7 +28,7 @@ export class GameService {
 
   gameFormatted = {};
 
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 
   setPlayerNumber(players: number = 2) {
     this.playersNumber =  players;
@@ -45,24 +45,24 @@ export class GameService {
   }
 
   initPlayers(): PlayerInterface[] {
-    for (let i = 1; i <= this.playersNumber; i++) {
-      this.playersListItem.push(
-        {
-          name: this.playerLabel + ' ' + i,
-          coin: 0,
-          vizier: 0,
-          craftman: 0,
-          sage: 0,
-          djinn: 0,
-          palmTree: 0,
-          palace: 0,
-          camel: 0,
-          object: 0,
-          merchandise: 0,
-          score: 0
-        }
-      );
-    }
+      for (let i = 1; i <= this.playersNumber; i++) {
+        this.playersListItem.push(
+          {
+            name: this.translate.instant('players.playerLabel', { number: i }),
+            coin: 0,
+            vizier: 0,
+            craftman: 0,
+            sage: 0,
+            djinn: 0,
+            palmTree: 0,
+            palace: 0,
+            camel: 0,
+            object: 0,
+            merchandise: 0,
+            score: 0
+          }
+        );
+      }
     return this.playersListItem;
   }
 
