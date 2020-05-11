@@ -10,6 +10,7 @@ export class GameService {
   playersListItem: PlayerInterface[] = [];
   alreadyCalculateVizier = false;
   alreadyCalculateCraftman = false;
+  awards = [];
 
   listCategories: any = {
     name: { isActivated: true },
@@ -90,9 +91,17 @@ export class GameService {
     for (let i = 0; i < this.playersNumber; i++) {
       this._calculateScore(players[i], i);
     }
-    // TODO remove the score button and put a new one for another game
     this.alreadyCalculateVizier = false;
     this.alreadyCalculateCraftman = false;
+  }
+
+  getAwardsList() {
+    return this.awards = this.playersListItem.map(
+      (player) => [player.name, player.score]
+    )
+    .sort((a, b) =>
+      Number(b[1]) - Number(a[1])
+    );
   }
 
   private _calculateScore(player: PlayerInterface, i: number) {

@@ -14,8 +14,10 @@
     "getScoreLabel": "Get score",
     "resetGameLabel": "Reset game",
     "newGameLabel": "New game",
-    "scoreBoardTitle": "Enter all the scores for each items",
-    "winnerLabel": "And the winner is:"
+    "scoreBoardTitle": "Enter the score for each item",
+    "winnerLabel": "And the winner is:",
+    "withLabel": "with",
+    "pointsLabel": "points"
   },
   "items": {
     "name": "Name",

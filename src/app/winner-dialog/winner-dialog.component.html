@@ -1,0 +1,9 @@
+<h2 mat-mat-dialog-title>{{ 'game.winnerLabel' | translate }}</h2>
+<mat-dialog-content class="mat-typography">
+  <ol class="winner-listing">
+    <li *ngFor="let player of data">{{ player[0] }} {{ 'game.withLabel' | translate }} {{ player[1] }} {{ 'game.pointsLabel' | translate }}</li>
+  </ol>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button color="primary" type="button" [routerLink]="['players']"> {{ 'game.newGameLabel' | translate }}</button>
+</mat-dialog-actions>

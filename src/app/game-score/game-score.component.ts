@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { GameService } from '../services/game.service';
 import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { WinnerDialogComponent } from '../winner-dialog/winner-dialog.component';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -19,6 +21,7 @@ export class GameScoreComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     public gameService: GameService,
+    public matDialog: MatDialog,
     private translate: TranslateService
     ) { }
 
@@ -35,10 +38,10 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     );
     // wait translation asyncly
     this.translation = this.translate.get('players.playerLabel').subscribe(() => {
-    this.gameService.initPlayers();
-    this.gameObjectFormatted = this.gameService.formatGameObject();
-    // to get the key and keep the order ( |keyvalue doesn't work like that)
-    this.gameKeys = Object.keys(this.gameObjectFormatted);
+      this.gameService.initPlayers();
+      this.gameObjectFormatted = this.gameService.formatGameObject();
+      // to get the key and keep the order ( |keyvalue doesn't work like that)
+      this.gameKeys = Object.keys(this.gameObjectFormatted);
     });
   }
 
@@ -52,9 +55,17 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     if (form.valid) {
       this.gameService.getScore(this.gameService.playersListItem);
     }
+
+    this.openWinnerDialog();
     // console.log(form.value);
     // console.log(this.gameObjectFormatted);
      console.log(this.gameService.playersListItem);
+  }
+
+  openWinnerDialog() {
+    this.matDialog.open(WinnerDialogComponent, {
+      data: this.gameService.getAwardsList()
+    });
   }
 
   ngOnDestroy(): void {

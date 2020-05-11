@@ -17,12 +17,15 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MatDialogModule } from '@angular/material/dialog';
+import { WinnerDialogComponent } from './winner-dialog/winner-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayersComponent,
-    GameScoreComponent
+    GameScoreComponent,
+    WinnerDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     MatFormFieldModule,
     MatSlideToggleModule,
     HttpClientModule,
+    MatDialogModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -44,6 +48,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         deps: [HttpClient]
       }
     })
+  ],
+  entryComponents: [
+    WinnerDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
