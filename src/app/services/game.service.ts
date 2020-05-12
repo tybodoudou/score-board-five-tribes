@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PlayerInterface } from '../modeles/player.interface';
 import { TranslateService } from '@ngx-translate/core';
-import { awardsInterface } from '../modeles/awards.interface';
+import { AwardsInterface } from '../modeles/awards.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class GameService {
   playersListItem: PlayerInterface[] = [];
   alreadyCalculateVizier = false;
   alreadyCalculateCraftman = false;
-  awards: awardsInterface[] = [];
+  awards: AwardsInterface[] = [];
   gameFormatted: any = {};
 
   categoriesList: any = {
@@ -94,10 +94,10 @@ export class GameService {
     this.alreadyCalculateCraftman = false;
   }
 
-  getAwardsList(): awardsInterface[] {
+  getAwardsList(): AwardsInterface[] {
     return this.awards = this.playersListItem.map(
       (player) => {
-        const obj: awardsInterface = { playerName: '', playerScore: null};
+        const obj: AwardsInterface = { playerName: '', playerScore: null};
         obj.playerName = player.name;
         obj.playerScore = player.score;
         return obj;
