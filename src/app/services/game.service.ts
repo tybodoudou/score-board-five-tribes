@@ -15,18 +15,18 @@ export class GameService {
   gameFormatted: any = {};
 
   categoriesList: any = {
-    name: { isActivated: true },
-    coin: { isActivated: true },
-    vizier: { isActivated: true },
-    craftman: { isActivated: false },
-    sage: { isActivated: true },
-    djinn: { isActivated: true },
-    palmTree: { isActivated: true },
-    palace: { isActivated: true },
-    camel: { isActivated: true },
-    object: { isActivated: false },
-    merchandise: { isActivated: true },
-    score: { isActivated: true }
+    name:         { isActivated: true },
+    coin:         { isActivated: true },
+    vizier:       { isActivated: true },
+    craftman:     { isActivated: false },
+    sage:         { isActivated: true },
+    djinn:        { isActivated: true },
+    palmTree:     { isActivated: true },
+    palace:       { isActivated: true },
+    camel:        { isActivated: true },
+    object:       { isActivated: false },
+    merchandise:  { isActivated: true },
+    score:        { isActivated: true }
   };
 
   constructor(private translate: TranslateService) { }
@@ -46,24 +46,24 @@ export class GameService {
   }
 
   initPlayers(): PlayerInterface[] {
-      for (let i = 1; i <= this.playersNumber; i++) {
-        this.playersListItem.push(
-          {
-            name: this.translate.instant('players.playerLabel', { number: i }),
-            coin: 0,
-            vizier: 0,
-            craftman: 0,
-            sage: 0,
-            djinn: 0,
-            palmTree: 0,
-            palace: 0,
-            camel: 0,
-            object: 0,
-            merchandise: 0,
-            score: 0
-          }
-        );
-      }
+    for (let i = 1; i <= this.playersNumber; i++) {
+      this.playersListItem.push(
+        {
+          name: this.translate.instant('players.playerLabel', { number: i }),
+          coin: 0,
+          vizier: 0,
+          craftman: 0,
+          sage: 0,
+          djinn: 0,
+          palmTree: 0,
+          palace: 0,
+          camel: 0,
+          object: 0,
+          merchandise: 0,
+          score: 0
+        }
+      );
+    }
     return this.playersListItem;
   }
 
@@ -78,7 +78,6 @@ export class GameService {
              categoryRow.push(this.playersListItem[i][keyName]);
            }
            this.gameFormatted[keyName] = {
-               //label: value.name,
                playersRow: categoryRow
              };
          }
@@ -98,9 +97,9 @@ export class GameService {
   getAwardsList(): awardsInterface[] {
     return this.awards = this.playersListItem.map(
       (player) => {
-        let obj: awardsInterface = { playerName: '', playerScore: null};
-        obj['playerName'] = player.name;
-        obj['playerScore'] = player.score;
+        const obj: awardsInterface = { playerName: '', playerScore: null};
+        obj.playerName = player.name;
+        obj.playerScore = player.score;
         return obj;
       }
     )

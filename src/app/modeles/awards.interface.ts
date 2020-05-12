@@ -1,4 +1,4 @@
-export interface awardsInterface {
+export interface AwardsInterface {
   playerName: string;
   playerScore: number;
 }
