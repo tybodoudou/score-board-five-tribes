@@ -19,7 +19,4 @@ describe('Component: GameScoreComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
