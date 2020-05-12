@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PlayerInterface } from '../modeles/player.interface';
 import { TranslateService } from '@ngx-translate/core';
+import { awardsInterface } from '../modeles/awards.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,10 @@ export class GameService {
   playersListItem: PlayerInterface[] = [];
   alreadyCalculateVizier = false;
   alreadyCalculateCraftman = false;
-  awards = [];
+  awards: awardsInterface[] = [];
+  gameFormatted: any = {};
 
-  listCategories: any = {
+  categoriesList: any = {
     name: { isActivated: true },
     coin: { isActivated: true },
     vizier: { isActivated: true },
@@ -27,21 +29,19 @@ export class GameService {
     score: { isActivated: true }
   };
 
-  gameFormatted = {};
-
   constructor(private translate: TranslateService) { }
 
-  setPlayerNumber(players: number = 2) {
+  setPlayerNumber(players: number = 2): void {
     this.playersNumber =  players;
   }
 
   setExtension(extension: boolean) {
     if (extension) {
-      this.listCategories.craftman.isActivated = true;
-      this.listCategories.object.isActivated = true;
+      this.categoriesList.craftman.isActivated = true;
+      this.categoriesList.object.isActivated = true;
     } else {
-      this.listCategories.craftman.isActivated = false;
-      this.listCategories.object.isActivated = false;
+      this.categoriesList.craftman.isActivated = false;
+      this.categoriesList.object.isActivated = false;
     }
   }
 
@@ -67,11 +67,11 @@ export class GameService {
     return this.playersListItem;
   }
 
-  formatGameObject() {
+  formatGameObject(): any {
     this.gameFormatted = [];
-    for (const keyName in this.listCategories) {
-      if (this.listCategories.hasOwnProperty(keyName)) {
-        const value = this.listCategories[keyName];
+    for (const keyName in this.categoriesList) {
+      if (this.categoriesList.hasOwnProperty(keyName)) {
+        const value = this.categoriesList[keyName];
         if (value.isActivated) {
            const categoryRow = [];
            for (let i = 0; i < this.playersNumber; i++) {
@@ -87,7 +87,7 @@ export class GameService {
     return this.gameFormatted;
   }
 
-  getScore(players: PlayerInterface[]) {
+  getScore(players: PlayerInterface[]): void {
     for (let i = 0; i < this.playersNumber; i++) {
       this._calculateScore(players[i], i);
     }
@@ -95,16 +95,21 @@ export class GameService {
     this.alreadyCalculateCraftman = false;
   }
 
-  getAwardsList() {
+  getAwardsList(): awardsInterface[] {
     return this.awards = this.playersListItem.map(
-      (player) => [player.name, player.score]
+      (player) => {
+        let obj: awardsInterface = { playerName: '', playerScore: null};
+        obj['playerName'] = player.name;
+        obj['playerScore'] = player.score;
+        return obj;
+      }
     )
     .sort((a, b) =>
-      Number(b[1]) - Number(a[1])
+      b.playerScore - a.playerScore
     );
   }
 
-  private _calculateScore(player: PlayerInterface, i: number) {
+  private _calculateScore(player: PlayerInterface, i: number): void {
     for (const prop in player) {
       if (!player.hasOwnProperty(prop)) { continue; }
       switch (prop) {
@@ -140,8 +145,8 @@ export class GameService {
     }
   }
 
-  private _calculateVizier() {
-    let viziers = [];
+  private _calculateVizier(): void {
+    let viziers: number[][] = [];
     let score: number;
 
     if (!this.alreadyCalculateVizier) {
@@ -167,7 +172,7 @@ export class GameService {
     }
   }
 
-  private _calculateCraftman() {
+  private _calculateCraftman(): void {
     let bestScore = 0;
     let bestPlayerNumber: number;
 

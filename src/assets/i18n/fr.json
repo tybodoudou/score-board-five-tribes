@@ -16,8 +16,7 @@
     "newGameLabel": "Nouvelle partie",
     "scoreBoardTitle": "Entrer le score pour chaque élément",
     "winnerLabel": "Et le gagnant est:",
-    "withLabel": "avec",
-    "pointsLabel": "points"
+    "winnerSentence": "{{ playerName }} avec {{ playerScore }} points"
   },
   "items": {
     "name": "Nom",

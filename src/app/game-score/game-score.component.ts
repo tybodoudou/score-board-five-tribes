@@ -15,8 +15,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class GameScoreComponent implements OnInit, OnDestroy {
   routeSubscription$ = new Subscription();
   translation: Subscription;
-  gameObjectFormatted = {};
-  gameKeys = [];
+  gameObjectFormatted: any = {};
+  gameKeys: string[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,7 +29,7 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     this.initGame();
   }
 
-  initGame() {
+  initGame(): void {
     this.routeSubscription$ = this.activatedRoute.params.subscribe(
       (param) => {
         this.gameService.setPlayerNumber(+param.id);
@@ -45,32 +45,29 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     });
   }
 
-  clearIfDefault(columnId: number, row: string) {
+  clearIfDefault(columnId: number, row: string): void {
      if (this.gameObjectFormatted[row].playersRow[columnId] === this.gameService.playersListItem[columnId][row]) {
       this.gameService.playersListItem[columnId][row] = '';
     }
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     if (form.valid) {
       this.gameService.getScore(this.gameService.playersListItem);
     }
 
-    this.openWinnerDialog();
-    // console.log(form.value);
-    // console.log(this.gameObjectFormatted);
-     console.log(this.gameService.playersListItem);
-  }
-
-  openWinnerDialog() {
-    this.matDialog.open(WinnerDialogComponent, {
-      data: this.gameService.getAwardsList()
-    });
+    this._openWinnerDialog();
   }
 
   ngOnDestroy(): void {
     this.routeSubscription$.unsubscribe();
     this.translation.unsubscribe();
+  }
+
+  private _openWinnerDialog(): void {
+    this.matDialog.open(WinnerDialogComponent, {
+      data: this.gameService.getAwardsList()
+    });
   }
 
 }

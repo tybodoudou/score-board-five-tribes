@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { GameService } from '../services/game.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,16 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: './players.component.html',
   styleUrls: ['./players.component.scss']
 })
-export class PlayersComponent implements OnInit {
+export class PlayersComponent {
   players: Array<number> = [2, 3, 4];
 
   constructor(
-    private gameService: GameService,
     private router: Router
     ) { }
-
-  ngOnInit(): void {
-  }
 
   validatePlayers(playersForm: NgForm): void {
     if (playersForm.valid) {

@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { PlayersComponent } from './players/players.component';
 import { GameScoreComponent } from './game-score/game-score.component';
 
-
 const routes: Routes = [
   { path: 'players', component: PlayersComponent},
   { path: 'game', component: GameScoreComponent},

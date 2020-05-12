@@ -1,7 +1,7 @@
 <h2 mat-mat-dialog-title>{{ 'game.winnerLabel' | translate }}</h2>
 <mat-dialog-content class="mat-typography">
   <ol class="winner-listing">
-    <li *ngFor="let player of data">{{ player[0] }} {{ 'game.withLabel' | translate }} {{ player[1] }} {{ 'game.pointsLabel' | translate }}</li>
+    <li *ngFor="let player of data">{{ 'game.winnerSentence' | translate: { playerName: player.playerName, playerScore: player.playerScore} }} </li>
   </ol>
 </mat-dialog-content>
 <mat-dialog-actions>

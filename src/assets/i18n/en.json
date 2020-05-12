@@ -16,8 +16,7 @@
     "newGameLabel": "New game",
     "scoreBoardTitle": "Enter the score for each item",
     "winnerLabel": "And the winner is:",
-    "withLabel": "with",
-    "pointsLabel": "points"
+    "winnerSentence": "{{ playerName }} with {{ playerScore }} points"
   },
   "items": {
     "name": "Name",

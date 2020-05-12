@@ -15,12 +15,12 @@ export class AppComponent {
     translate.setDefaultLang('fr');
   }
 
-  changeLanguage() {
+  changeLanguage(): void {
     this.switch = !this.switch;
     this.switch ? this.useLanguage('en') : this.useLanguage('fr');
   }
 
-  useLanguage(language: string) {
+  useLanguage(language: string): void {
     this.translate.use(language);
   }
 }

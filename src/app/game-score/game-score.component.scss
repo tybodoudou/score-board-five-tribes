@@ -6,6 +6,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: stretch;
+
     .formRow {
         height: 50px;
         display: flex;
@@ -13,9 +14,11 @@
         justify-content: space-between;
         align-items: center;
     }
+
     .formColumn {
       min-width: 20%;
     }
+
     .formCell {
       min-height: 24px;
       padding: 5px;

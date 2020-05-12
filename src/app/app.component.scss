@@ -1,6 +1,8 @@
 .mat-toolbar-row, .mat-toolbar-single-row {
   justify-content: space-between;
+
   .language-module {
+
     .flag {
       padding: 0 14px;
     }
@@ -12,6 +14,7 @@
     background: rgb(2, 0, 36);
     background: linear-gradient(218deg, rgba(2, 0, 36, 1) 0%, rgba(15, 74, 118, 1) 75%, rgba(64, 122, 142, 1) 100%);
     display: flex;
+
     .main-content {
         padding: 10vh;
         max-width: 90vw;
