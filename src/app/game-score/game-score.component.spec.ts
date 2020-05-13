@@ -84,6 +84,7 @@ describe('Component: GameScoreComponent', () => {
     const form = new NgForm(null,null);
     spyOn(gameService, 'getScore');
     spyOnProperty(form, 'valid').and.returnValue(true);
+    spyOn(component as any, '_openWinnerDialog');
 
     component.onSubmit(form);
     expect(gameService.getScore).toHaveBeenCalled();
