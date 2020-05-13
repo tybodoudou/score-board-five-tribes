@@ -46,22 +46,25 @@ export class GameScoreComponent implements OnInit, OnDestroy {
   }
 
   clearIfDefault(columnId: number, row: string): void {
-     if (this.gameObjectFormatted[row].playersRow[columnId] === this.gameService.playersListItem[columnId][row]) {
-      this.gameService.playersListItem[columnId][row] = '';
+     if ( this._getGameObjectFormatted(columnId, row) === this.gameService.getPlayersListItem(columnId, row)) {
+      this.gameService.resetPlayerListitem(columnId, row);
     }
   }
 
   onSubmit(form: NgForm): void {
     if (form.valid) {
       this.gameService.getScore(this.gameService.playersListItem);
+      this._openWinnerDialog();
     }
-
-    this._openWinnerDialog();
   }
 
   ngOnDestroy(): void {
     this.routeSubscription$.unsubscribe();
     this.translation.unsubscribe();
+  }
+
+  private _getGameObjectFormatted(columnId: number, row: string): string {
+    return this.gameObjectFormatted[row].playersRow[columnId];
   }
 
   private _openWinnerDialog(): void {

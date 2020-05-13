@@ -108,6 +108,14 @@ export class GameService {
     );
   }
 
+  getPlayersListItem(columnId: number, row: string): string {
+    return this.playersListItem[columnId][row];
+  }
+
+  resetPlayerListitem(columnId: number, row: string) {
+    this.playersListItem[columnId][row] = '';
+  }
+
   private _calculateScore(player: PlayerInterface, i: number): void {
     for (const prop in player) {
       if (!player.hasOwnProperty(prop)) { continue; }
