@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayersComponent } from './players.component';
-import { NgForm, FormsModule, FormBuilder } from '@angular/forms';
+import { NgForm, FormsModule} from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 
@@ -37,11 +37,12 @@ describe('Component: PlayersComponent', () => {
 
     translate = TestBed.get(TranslateService);
     http = TestBed.get(HttpTestingController);
+    router = TestBed.get(Router);
+
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PlayersComponent);
-    router = TestBed.get(Router);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
