@@ -42,7 +42,11 @@ describe('WinnerDialogComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WinnerDialogComponent);
     component = fixture.componentInstance;
+    component.data = [];
     fixture.detectChanges();
-  });
+  })
 
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });
