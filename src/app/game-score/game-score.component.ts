@@ -63,10 +63,12 @@ export class GameScoreComponent implements OnInit, OnDestroy {
     this.translation.unsubscribe();
   }
 
+  /* istanbul ignore next */
   private _getGameObjectFormatted(columnId: number, row: string): string {
     return this.gameObjectFormatted[row].playersRow[columnId];
   }
 
+  /* istanbul ignore next */
   private _openWinnerDialog(): void {
     this.matDialog.open(WinnerDialogComponent, {
       data: this.gameService.getAwardsList()
