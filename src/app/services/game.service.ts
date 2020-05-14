@@ -32,7 +32,13 @@ export class GameService {
   constructor(private translate: TranslateService) { }
 
   setPlayerNumber(players: number = 2): void {
-    this.playersNumber =  players;
+    if (players > 4) {
+      this.playersNumber = 4;
+    } else if (players < 2) {
+      this.playersNumber = 2;
+    } else {
+      this.playersNumber =  players;
+    }
   }
 
   setExtension(extension: boolean) {
@@ -70,6 +76,7 @@ export class GameService {
   formatGameObject(): any {
     this.gameFormatted = [];
     for (const keyName in this.categoriesList) {
+      /* istanbul ignore next */
       if (this.categoriesList.hasOwnProperty(keyName)) {
         const value = this.categoriesList[keyName];
         if (value.isActivated) {
@@ -108,16 +115,19 @@ export class GameService {
     );
   }
 
+  /* istanbul ignore next */
   getPlayersListItem(columnId: number, row: string): string {
     return this.playersListItem[columnId][row];
   }
 
+  /* istanbul ignore next */
   resetPlayerListitem(columnId: number, row: string) {
     this.playersListItem[columnId][row] = '';
   }
 
   private _calculateScore(player: PlayerInterface, i: number): void {
     for (const prop in player) {
+      /* istanbul ignore next */
       if (!player.hasOwnProperty(prop)) { continue; }
       switch (prop) {
         // no calculation, just add the result
