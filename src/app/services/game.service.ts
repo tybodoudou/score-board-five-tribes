@@ -52,6 +52,7 @@ export class GameService {
   }
 
   initPlayers(): PlayerInterface[] {
+    this.playersListItem = [];
     for (let i = 1; i <= this.playersNumber; i++) {
       this.playersListItem.push(
         {
