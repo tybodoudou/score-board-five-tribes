@@ -1,15 +1,19 @@
 .players {
-    width: 400px;
+    max-width: 400px;
     margin: 0 auto;
 
     .content {
         display: flex;
         justify-content: space-between;
-        padding: 5vh;
+        padding-top: 2vh;
         flex-direction: column;
 
+        .toggle-label {
+          white-space: normal;
+        }
+
         .mat-slide-toggle {
-          margin: 5vh 0;
+          margin: 2vh 0 4vh;
         }
     }
 }

@@ -1,10 +1,10 @@
-<mat-toolbar>
+<mat-toolbar color="accent">
     <mat-toolbar-row class="toolbar">
         <span>{{ 'app.title' | translate }}</span>
         <span class="language-module">
-          <span class="flag">🇫🇷</span>
-          <mat-slide-toggle color="primary" name="language" (click)="changeLanguage()"></mat-slide-toggle>
-          <span class="flag">🇬🇧</span>
+          <span>🇫🇷</span>
+          <mat-slide-toggle class="flag-toggle" color="primary" name="language" (click)="changeLanguage()"></mat-slide-toggle>
+          <span>🇬🇧</span>
         </span>
     </mat-toolbar-row>
 </mat-toolbar>

@@ -7,11 +7,19 @@
             <mat-form-field>
                 <mat-label>{{ 'players.chooseNumber' | translate }}</mat-label>
                 <mat-select name="playersNumber" ngModel required>
-                    <mat-option *ngFor="let player of players" [value]="player"> {{ player }} {{ 'players.playersLabel' | translate }}</mat-option>
+                    <mat-option *ngFor="let player of players" [value]="player">
+                      {{ player }} {{ 'players.playersLabel' | translate }}
+                    </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-slide-toggle color="primary" name="extension" ngModel>{{ 'players.extensionLabel' | translate }}</mat-slide-toggle>
-            <button type="submit" mat-raised-button color="primary" [disabled]="!(playersForm.valid && playersForm.form.touched)">{{ 'players.validateLabel' | translate }}</button>
+            <mat-slide-toggle class="toggle-label" color="primary" name="extension" ngModel>
+              <span class="toggle-label">
+                {{ 'players.extensionLabel' | translate }}
+              </span>
+            </mat-slide-toggle>
+            <button type="submit" mat-raised-button color="primary" [disabled]="!(playersForm.valid && playersForm.form.touched)">
+              {{ 'players.validateLabel' | translate }}
+            </button>
         </form>
     </mat-card-content>
 </mat-card>
