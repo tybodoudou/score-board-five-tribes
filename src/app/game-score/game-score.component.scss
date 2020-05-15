@@ -1,5 +1,4 @@
 .wrapper {
-    width: 80vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -8,24 +7,92 @@
     align-items: stretch;
 
     .formRow {
-        height: 50px;
+        height: 55px;
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
     }
 
+    .row-name {
+      background-color: #c8c9af;
+    }
+
+    .row-coin {
+      background-color: #7cd7d0;
+    }
+
+    .row-vizir {
+      background-color: #ffeb9a;
+    }
+
+    .row-craftman {
+      background-color: #cdaed6;
+    }
+
+    .row-sage {
+      background-color: #ece3d5;
+    }
+
+    .row-djinn {
+      background-color: #fdbfdc;
+    }
+
+    .row-palmTree {
+      background-color: #ebd09c;
+    }
+
+    .row-palace {
+      background-color: #bcc5cc;
+    }
+
+    .row-camel {
+      background-color: #ffd59e;
+    }
+
+    .row-object {
+      background-color: #cdaed6;
+    }
+
+    .row-merchandise {
+      background-color: #dee89e;
+    }
+
+    .row-score {
+      background-color: #c8c9af;
+    }
+
     .formColumn {
-      min-width: 20%;
+      width: 25%;
+    }
+
+    .item-column-content {
+      max-width: 150px;
+
+      .item-content {
+        display: flex;
+        justify-content: space-between;
+
+        .game-icons-content {
+          width: 50px;
+          height: 100%;
+
+          .game-icons {
+            height: 100%;
+          }
+        }
+      }
     }
 
     .formCell {
-      min-height: 24px;
+      height: 55px;
       padding: 5px;
       mat-label {
-        line-height: 24px;
+        line-height: 55px;
       }
     }
+
+
 }
 
 button {

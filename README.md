@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Meeple icon by Delapouite under CC BY 3.0 (http://delapouite.com/)
+Palm tree icon Delapouite under CC BY 3.0 (http://delapouite.com/)
+Camel head icon Delapouite under CC BY 3.0 (http://delapouite.com/)
+Indian palace icon Delapouite under CC BY 3.0 (http://delapouite.com/)
+Crown coin icon by Lorc under CC BY 3.0 (http://lorcblog.blogspot.com/)
+Magic lamp icon by Lorc under CC BY 3.0 (http://lorcblog.blogspot.com/)
+Dead eye icon by Lorc under CC BY 3.0 (http://lorcblog.blogspot.com/)
+Card random icon by Faithtoken under CC BY 3.0 (http://www.faithtoken.com/)

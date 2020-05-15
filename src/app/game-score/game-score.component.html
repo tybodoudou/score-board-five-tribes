@@ -5,10 +5,13 @@
     <mat-card-content>
         <form #scoreBoard="ngForm" (ngSubmit)="onSubmit(scoreBoard)" novalidate>
             <div class="wrapper">
-                <div *ngFor="let row of gameKeys; let rowId = index" class="formRow">
-                    <div class="formColumn">
-                        <div class="formCell">
+                <div *ngFor="let row of gameKeys; let rowId = index" class="formRow row-{{ row }}">
+                    <div class="formColumn item-column-content">
+                        <div class="formCell item-content">
                             <mat-label>{{ "items."+row | translate }}</mat-label>
+                            <div *ngIf="row !== 'name' && row !== 'score'" class="game-icons-content">
+                              <img class="game-icons" src="assets/icons/{{ row }}.svg">
+                            </div>
                         </div>
                     </div>
                     <div *ngFor="let column of gameObjectFormatted[row].playersRow let columnId = index" class="formColumn">
