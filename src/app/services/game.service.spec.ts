@@ -2,10 +2,10 @@ import { TestBed } from '@angular/core/testing';
 
 import { GameService } from './game.service';
 
-import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
-import {HttpLoaderFactory} from "./../app.module";
-import {HttpClient} from "@angular/common/http";
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import {HttpLoaderFactory} from './../app.module';
+import {HttpClient} from '@angular/common/http';
 import { PlayerInterface } from '../modeles/player.interface';
 
 describe('GameService', () => {
@@ -31,8 +31,8 @@ describe('GameService', () => {
     });
 
     service = TestBed.inject(GameService);
-    translate = TestBed.get(TranslateService);
-    http = TestBed.get(HttpTestingController);
+    translate = TestBed.inject(TranslateService);
+    http = TestBed.inject(HttpTestingController);
   });
 
   it('should set player number correctly if > 4', () => {
@@ -87,48 +87,48 @@ describe('GameService', () => {
   });
 
   it('should calculate correctly vizier', () => {
-    let playersmock: PlayerInterface[] = [
+    const playersmock: PlayerInterface[] = [
       {
-        "name": "Joueur 1",
-        "coin": 0,
-        "vizier": 1,
-        "craftman": 0,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 1',
+        coin: 0,
+        vizier: 1,
+        craftman: 0,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       },
       {
-        "name": "Joueur 2",
-        "coin": 0,
-        "vizier": 2,
-        "craftman": 0,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 2',
+        coin: 0,
+        vizier: 2,
+        craftman: 0,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       },
       {
-        "name": "Joueur 3",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 0,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 3',
+        coin: 0,
+        vizier: 0,
+        craftman: 0,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       }
     ];
     service.setPlayerNumber(3);
@@ -141,48 +141,48 @@ describe('GameService', () => {
   });
 
   it('should calculate correctly vizier', () => {
-    let playersmock: PlayerInterface[] = [
+    const playersmock: PlayerInterface[] = [
       {
-        "name": "Joueur 1",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 2,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 1',
+        coin: 0,
+        vizier: 0,
+        craftman: 2,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       },
       {
-        "name": "Joueur 2",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 3,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 2',
+        coin: 0,
+        vizier: 0,
+        craftman: 3,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       },
       {
-        "name": "Joueur 3",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 0,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 3',
+        coin: 0,
+        vizier: 0,
+        craftman: 0,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       }
     ];
     service.setPlayerNumber(3);
@@ -195,48 +195,48 @@ describe('GameService', () => {
   });
 
   it('should calculate correctly vizier', () => {
-    let playersmock: PlayerInterface[] = [
+    const playersmock: PlayerInterface[] = [
       {
-        "name": "Joueur 1",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 2,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 1',
+        coin: 0,
+        vizier: 0,
+        craftman: 2,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       },
       {
-        "name": "Joueur 2",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 3,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 2',
+        coin: 0,
+        vizier: 0,
+        craftman: 3,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       },
       {
-        "name": "Joueur 3",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 0,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 3',
+        coin: 0,
+        vizier: 0,
+        craftman: 0,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       }
     ];
     service.setPlayerNumber(3);
@@ -250,62 +250,62 @@ describe('GameService', () => {
 
 
   it('should calculate correctly all others items', () => {
-    let playersmock: PlayerInterface[] = [
+    const playersmock: PlayerInterface[] = [
       {
-        "name": "Joueur 1",
-        "coin": 1,
-        "vizier": 0,
-        "craftman": 0,
-        "sage": 0,
-        "djinn": 1,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 1,
-        "object": 1,
-        "merchandise": 1,
-        "score": 0
+        name: 'Joueur 1',
+        coin: 1,
+        vizier: 0,
+        craftman: 0,
+        sage: 0,
+        djinn: 1,
+        palmTree: 0,
+        palace: 0,
+        camel: 1,
+        object: 1,
+        merchandise: 1,
+        score: 0
       },
       {
-        "name": "Joueur 2",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 0,
-        "sage": 2,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 2',
+        coin: 0,
+        vizier: 0,
+        craftman: 0,
+        sage: 2,
+        djinn: 0,
+        palmTree: 0,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       },
       {
-        "name": "Joueur 3",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 0,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 2,
-        "palace": 0,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 3',
+        coin: 0,
+        vizier: 0,
+        craftman: 0,
+        sage: 0,
+        djinn: 0,
+        palmTree: 2,
+        palace: 0,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       },
       {
-        "name": "Joueur 4",
-        "coin": 0,
-        "vizier": 0,
-        "craftman": 0,
-        "sage": 0,
-        "djinn": 0,
-        "palmTree": 0,
-        "palace": 2,
-        "camel": 0,
-        "object": 0,
-        "merchandise": 0,
-        "score": 0
+        name: 'Joueur 4',
+        coin: 0,
+        vizier: 0,
+        craftman: 0,
+        sage: 0,
+        djinn: 0,
+        palmTree: 0,
+        palace: 2,
+        camel: 0,
+        object: 0,
+        merchandise: 0,
+        score: 0
       }
     ];
     service.setPlayerNumber(4);

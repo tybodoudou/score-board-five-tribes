@@ -3,10 +3,10 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
 
 import { WinnerDialogComponent } from './winner-dialog.component';
 
-import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
-import {HttpLoaderFactory} from "./../app.module";
-import {HttpClient} from "@angular/common/http";
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import {HttpLoaderFactory} from './../app.module';
+import {HttpClient} from '@angular/common/http';
 
 describe('WinnerDialogComponent', () => {
   let component: WinnerDialogComponent;
@@ -35,8 +35,8 @@ describe('WinnerDialogComponent', () => {
     })
     .compileComponents();
 
-    translate = TestBed.get(TranslateService);
-    http = TestBed.get(HttpTestingController);
+    translate = TestBed.inject(TranslateService);
+    http = TestBed.inject(HttpTestingController);
   }));
 
   beforeEach(() => {
@@ -44,7 +44,7 @@ describe('WinnerDialogComponent', () => {
     component = fixture.componentInstance;
     component.data = [];
     fixture.detectChanges();
-  })
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

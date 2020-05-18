@@ -4,15 +4,14 @@ import { GameScoreComponent } from './game-score.component';
 
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
-import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
-import {HttpLoaderFactory} from "./../app.module";
-import {HttpClient} from "@angular/common/http";
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import {HttpLoaderFactory} from './../app.module';
+import {HttpClient} from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgForm, FormsModule} from '@angular/forms';
 import { GameService } from '../services/game.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Component } from '@angular/core';
 
 
 describe('Component: GameScoreComponent', () => {
@@ -46,10 +45,10 @@ describe('Component: GameScoreComponent', () => {
     })
     .compileComponents();
 
-    translate = TestBed.get(TranslateService);
-    http = TestBed.get(HttpTestingController);
-    router = TestBed.get(Router);
-    gameService = TestBed.get(GameService);
+    translate = TestBed.inject(TranslateService);
+    http = TestBed.inject(HttpTestingController);
+    router = TestBed.inject(Router);
+    gameService = TestBed.inject(GameService);
   }));
 
   beforeEach(() => {
@@ -81,7 +80,8 @@ describe('Component: GameScoreComponent', () => {
   });
 
   it('should validate the form, get the score', () => {
-    const form = new NgForm(null,null);
+    const form = new NgForm(null, null);
+
     spyOn(gameService, 'getScore');
     spyOnProperty(form, 'valid').and.returnValue(true);
     spyOn(component as any, '_openWinnerDialog');
@@ -91,7 +91,8 @@ describe('Component: GameScoreComponent', () => {
   });
 
   it('should NOT validate the form, get the score', () => {
-    const form = new NgForm(null,null);
+    const form = new NgForm(null, null);
+
     spyOn(gameService, 'getScore');
     spyOnProperty(form, 'valid').and.returnValue(false);
 
