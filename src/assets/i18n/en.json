@@ -5,7 +5,7 @@
   "players": {
     "title": "New game",
     "chooseNumber": "How many players?",
-    "playerLabel": "Player {{ number }}",
+    "playerLabel": "P{{ number }}",
     "playersLabel": "players",
     "extensionLabel": "Play with extension \"The artisans of Naqala\"",
     "validateLabel": "Validate"

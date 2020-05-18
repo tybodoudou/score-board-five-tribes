@@ -5,7 +5,7 @@
   "players": {
     "title": "Nouvelle partie",
     "chooseNumber": "Combien de joueurs?",
-    "playerLabel": "Joueur {{ number }}",
+    "playerLabel": "J{{ number }}",
     "playersLabel": "joueurs",
     "extensionLabel": "Jouer avec l'extension \"Les artisans de Naqala\"",
     "validateLabel": "Valider"
