@@ -1,16 +1,25 @@
-.wrapper {
+.score-board {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+
+  .title {
+    padding: 5px;
+  }
+
+  .wrapper {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: stretch;
+    box-shadow: 2px 2px 16px -10px rgba(0,0,0,0.75);
 
     .formRow {
         height: 55px;
         display: flex;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
     }
 
@@ -63,7 +72,11 @@
     }
 
     .formColumn {
-      width: 25%;
+      width: 20%;
+    }
+
+    .inputs {
+      max-width: 46px;
     }
 
     .item-column-content {
@@ -72,6 +85,11 @@
       .item-content {
         display: flex;
         justify-content: space-between;
+        padding-left: 5px;
+
+        .item-label {
+          display: none;
+        }
 
         .game-icons-content {
           width: 50px;
@@ -85,16 +103,39 @@
     }
 
     .formCell {
-      height: 55px;
-      padding: 5px;
+      text-align: center;
       mat-label {
         line-height: 55px;
       }
     }
 
 
+  }
+
+  .button-content {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+
+    button {
+      margin-right: 8px;
+    }
+  }
 }
 
-button {
-  margin-right: 8px;
+@media(min-width: 676px) {
+  .score-board {
+    padding: 16px;
+    border-radius: 4px;
+
+    .wrapper {
+      .item-column-content .item-content .item-label {
+        display: block;
+      }
+
+      .inputs {
+        max-width: 60px;
+      }
+    }
+  }
 }

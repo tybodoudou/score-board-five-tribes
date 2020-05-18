@@ -16,8 +16,6 @@
     display: flex;
 
     .main-content {
-        padding: 1%;
-        max-width: 95%;
         flex: 1;
         margin: 0 auto;
     }
@@ -27,4 +25,13 @@
   .main-body {
     height: calc(100% - 64px); // 64 is the min height of the toolbar for desktop
   }
+}
+
+@media(min-width: 676px) {
+      .main-content {
+        padding: 1%;
+        max-width: 95%;
+        flex: 1;
+        margin: 0 auto;
+    }
 }

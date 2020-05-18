@@ -1,5 +1,5 @@
-<mat-card>
-    <mat-card-title>
+<mat-card class="score-board">
+    <mat-card-title class="title">
         {{ 'game.scoreBoardTitle' | translate }}
     </mat-card-title>
     <mat-card-content>
@@ -8,7 +8,7 @@
                 <div *ngFor="let row of gameKeys; let rowId = index" class="formRow row-{{ row }}">
                     <div class="formColumn item-column-content">
                         <div class="formCell item-content">
-                            <mat-label>{{ "items."+row | translate }}</mat-label>
+                            <mat-label class="{{ row !== 'name' && row !== 'score' ? 'item-label' : '' }}">{{ "items."+row | translate }}</mat-label>
                             <div *ngIf="row !== 'name' && row !== 'score'" class="game-icons-content">
                               <img class="game-icons" src="assets/icons/{{ row }}.svg">
                             </div>
@@ -25,18 +25,27 @@
                             [(ngModel)]="gameService.playersListItem[columnId][row]"
                             id="{{ row }}-{{ columnId }}"
                             name="{{ row }}-{{ columnId }}"
+                            class="inputs"
                             autocomplete="off">
                           </ng-container>
                           <ng-template #score>
-                            {{ gameService.playersListItem[columnId]['score'] }}
+                            <input
+                            matInput
+                            readonly
+                            type="text"
+                            class="inputs"
+                            value="{{ gameService.playersListItem[columnId]['score'] }}"
+                            >
                           </ng-template>
                         </div>
                     </div>
                 </div>
             </div>
-            <button mat-raised-button color="primary" type="submit"> {{ 'game.getScoreLabel' | translate }}</button>
-            <button mat-raised-button color="warn" type="button"
-              (click)="initGame()"> {{ 'game.resetGameLabel' | translate }}</button>
+            <div class="button-content">
+              <button mat-raised-button color="primary" type="submit"> {{ 'game.getScoreLabel' | translate }}</button>
+              <button mat-raised-button color="warn" type="button"
+                (click)="initGame()"> {{ 'game.resetGameLabel' | translate }}</button>
+            </div>
         </form>
     </mat-card-content>
 </mat-card>
