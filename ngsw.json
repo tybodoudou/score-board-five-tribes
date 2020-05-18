@@ -1,0 +1,104 @@
+{
+  "configVersion": 1,
+  "timestamp": 1589821710861,
+  "index": "/score-board-five-tribes/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/score-board-five-tribes/favicon.ico",
+        "/score-board-five-tribes/index.html",
+        "/score-board-five-tribes/main-es2015.ef36af2615288118a952.js",
+        "/score-board-five-tribes/main-es5.ef36af2615288118a952.js",
+        "/score-board-five-tribes/manifest.webmanifest",
+        "/score-board-five-tribes/polyfills-es2015.1f913f16a2d346cc8bdc.js",
+        "/score-board-five-tribes/polyfills-es5.f1044614286c4864d80f.js",
+        "/score-board-five-tribes/runtime-es2015.0811dcefd377500b5b1a.js",
+        "/score-board-five-tribes/runtime-es5.0811dcefd377500b5b1a.js",
+        "/score-board-five-tribes/styles.f7d3caa7b42134e0f5c5.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/score-board-five-tribes/assets/i18n/en.json",
+        "/score-board-five-tribes/assets/i18n/fr.json",
+        "/score-board-five-tribes/assets/icons/camel.svg",
+        "/score-board-five-tribes/assets/icons/coin.svg",
+        "/score-board-five-tribes/assets/icons/craftman.svg",
+        "/score-board-five-tribes/assets/icons/djinn.svg",
+        "/score-board-five-tribes/assets/icons/icon-128x128.png",
+        "/score-board-five-tribes/assets/icons/icon-144x144.png",
+        "/score-board-five-tribes/assets/icons/icon-152x152.png",
+        "/score-board-five-tribes/assets/icons/icon-192x192.png",
+        "/score-board-five-tribes/assets/icons/icon-384x384.png",
+        "/score-board-five-tribes/assets/icons/icon-512x512.png",
+        "/score-board-five-tribes/assets/icons/icon-72x72.png",
+        "/score-board-five-tribes/assets/icons/icon-96x96.png",
+        "/score-board-five-tribes/assets/icons/merchandise.svg",
+        "/score-board-five-tribes/assets/icons/object.svg",
+        "/score-board-five-tribes/assets/icons/palace.svg",
+        "/score-board-five-tribes/assets/icons/palmTree.svg",
+        "/score-board-five-tribes/assets/icons/sage.svg",
+        "/score-board-five-tribes/assets/icons/vizier.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/score-board-five-tribes/assets/i18n/en.json": "e610f64885097611652fca65e1bb5163292650da",
+    "/score-board-five-tribes/assets/i18n/fr.json": "9025ee4c28a0786b9c04360071a0bac6b09ac546",
+    "/score-board-five-tribes/assets/icons/camel.svg": "59d7c68462e52c949e7c23776ddccdd4333bbc80",
+    "/score-board-five-tribes/assets/icons/coin.svg": "8f212103f6ba061c6fd9fbd01e958cc37a54f24f",
+    "/score-board-five-tribes/assets/icons/craftman.svg": "f1f6135f7e64536905e4ee04d15458771de76d96",
+    "/score-board-five-tribes/assets/icons/djinn.svg": "66bd34c93c5c736474c17a36630e97a9b1852a04",
+    "/score-board-five-tribes/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/score-board-five-tribes/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/score-board-five-tribes/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/score-board-five-tribes/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/score-board-five-tribes/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/score-board-five-tribes/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/score-board-five-tribes/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/score-board-five-tribes/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/score-board-five-tribes/assets/icons/merchandise.svg": "e738a6188fef4b8a753b137f0bce24d7dad8ec35",
+    "/score-board-five-tribes/assets/icons/object.svg": "3691e3d1c597a211de06b5337f22d9aff4a0bd37",
+    "/score-board-five-tribes/assets/icons/palace.svg": "c4f731d8b92fbfcf4b81b95f5e431391a1b2f54f",
+    "/score-board-five-tribes/assets/icons/palmTree.svg": "b52e8d16514276714897bc089868d35cb0b204fd",
+    "/score-board-five-tribes/assets/icons/sage.svg": "7ea8e096ea62450a1a8261a872afc040bd68f669",
+    "/score-board-five-tribes/assets/icons/vizier.svg": "e1791beb08aa7796485456b099865540a1f0534d",
+    "/score-board-five-tribes/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/score-board-five-tribes/index.html": "4a00d905f9a051fe077c95f28ce38706d461295c",
+    "/score-board-five-tribes/main-es2015.ef36af2615288118a952.js": "0b34f556c9f8a589698c65a44ea6f6b57de077ae",
+    "/score-board-five-tribes/main-es5.ef36af2615288118a952.js": "e1c123afcb87a16650f9aaf54cb44d93bff8adb6",
+    "/score-board-five-tribes/manifest.webmanifest": "a99726010134cdfc611c0b64be0d433962964c53",
+    "/score-board-five-tribes/polyfills-es2015.1f913f16a2d346cc8bdc.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
+    "/score-board-five-tribes/polyfills-es5.f1044614286c4864d80f.js": "e5472003c8575a8fca7583648df3905038faeb18",
+    "/score-board-five-tribes/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/score-board-five-tribes/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/score-board-five-tribes/styles.f7d3caa7b42134e0f5c5.css": "96730cfb4ad8dee6c84c003820f72b2b950bf7f0"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
