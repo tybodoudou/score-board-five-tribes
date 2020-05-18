@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1589821710861,
+  "timestamp": 1589822113837,
   "index": "/score-board-five-tribes/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/score-board-five-tribes/favicon.ico",
         "/score-board-five-tribes/index.html",
-        "/score-board-five-tribes/main-es2015.ef36af2615288118a952.js",
-        "/score-board-five-tribes/main-es5.ef36af2615288118a952.js",
+        "/score-board-five-tribes/main-es2015.52fc469652b2ff6d38b5.js",
+        "/score-board-five-tribes/main-es5.52fc469652b2ff6d38b5.js",
         "/score-board-five-tribes/manifest.webmanifest",
         "/score-board-five-tribes/polyfills-es2015.1f913f16a2d346cc8bdc.js",
         "/score-board-five-tribes/polyfills-es5.f1044614286c4864d80f.js",
@@ -73,9 +73,9 @@
     "/score-board-five-tribes/assets/icons/sage.svg": "7ea8e096ea62450a1a8261a872afc040bd68f669",
     "/score-board-five-tribes/assets/icons/vizier.svg": "e1791beb08aa7796485456b099865540a1f0534d",
     "/score-board-five-tribes/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/score-board-five-tribes/index.html": "4a00d905f9a051fe077c95f28ce38706d461295c",
-    "/score-board-five-tribes/main-es2015.ef36af2615288118a952.js": "0b34f556c9f8a589698c65a44ea6f6b57de077ae",
-    "/score-board-five-tribes/main-es5.ef36af2615288118a952.js": "e1c123afcb87a16650f9aaf54cb44d93bff8adb6",
+    "/score-board-five-tribes/index.html": "198d55c24cbabced9ae398d15a726c506e718731",
+    "/score-board-five-tribes/main-es2015.52fc469652b2ff6d38b5.js": "c421df175b8feb56f42c6ff6ce840ab201371afa",
+    "/score-board-five-tribes/main-es5.52fc469652b2ff6d38b5.js": "e23883814b570104de0b97f5dabec63c6fe3743e",
     "/score-board-five-tribes/manifest.webmanifest": "a99726010134cdfc611c0b64be0d433962964c53",
     "/score-board-five-tribes/polyfills-es2015.1f913f16a2d346cc8bdc.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/score-board-five-tribes/polyfills-es5.f1044614286c4864d80f.js": "e5472003c8575a8fca7583648df3905038faeb18",
