@@ -1,0 +1,35 @@
+{
+  "app": {
+    "title": "Score Five Tribes"
+  },
+  "players": {
+    "title": "Nouvelle partie",
+    "chooseNumber": "Combien de joueurs?",
+    "playerLabel": "J{{ number }}",
+    "playersLabel": "joueurs",
+    "extensionLabel": "Jouer avec l'extension \"Les artisans de Naqala\"",
+    "validateLabel": "Valider"
+  },
+  "game": {
+    "getScoreLabel": "Résultat",
+    "resetGameLabel": "Remise à zéro",
+    "newGameLabel": "Nouvelle partie",
+    "scoreBoardTitle": "Entrer le score pour chaque élément",
+    "winnerLabel": "Et le gagnant est:",
+    "winnerSentence": "{{ playerName }} avec {{ playerScore }} points"
+  },
+  "items": {
+    "name": "Nom",
+    "coin": "Pièce d'or",
+    "vizier": "Vizir",
+    "craftman": "Artisant",
+    "sage": "Sage",
+    "djinn": "Djinn",
+    "palmTree": "Palmier",
+    "palace": "Palace",
+    "camel": "Chameau",
+    "object": "Objet",
+    "merchandise": "Marchandise",
+    "score": "Total"
+  }
+}
