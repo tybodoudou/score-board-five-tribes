@@ -1,6 +1,7 @@
 .players {
     max-width: 400px;
     margin: 0 auto;
+    border-radius: 0;
 
     .content {
         display: flex;
@@ -16,4 +17,10 @@
           margin: 2vh 0 4vh;
         }
     }
+}
+
+@media(min-width: 676px) {
+  .players {
+    border-radius: 4px;
+  }
 }
